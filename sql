@@ -1,0 +1,1 @@
+ CREATE TABLE keys_info (keyname varchar(100),keycode varchar(20),keymemo varchar(500),n1 varchar(200),n2 varchar(200));
