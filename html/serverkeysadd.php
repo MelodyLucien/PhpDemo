@@ -70,18 +70,35 @@
       	$keyname = $_POST['keyname'];
       	$keycode = $_POST['keycode'];
       	echo $keyname."<------>".$keycode;
+        require_once('2.mysql/mysql_connect.php');
+	    $select_db = $mysqli->select_db($mysql_conf['db']);
+	    if (!$select_db) {
+	        die("could not connect to the db:\n" .$mysqli->error);
+	    }
+	    $sql = "insert into keys_info (keyname,keycode) values('".$keyname."','".$keycode."');";
+	    $res = $mysqli->query($sql);
+	    if ($res) {
+             echo "add ok!";
+	    }else{
+	        die("sql error:\n" . $mysqli->error);
+	    }
+	    $res->free();
+	    $mysqli->close();
+
       }else{
       	echo error ;
       }
 	}
 
-// 現在のデフォルトのレスポンスコードを取得します
+
+
+/*// 現在のデフォルトのレスポンスコードを取得します
 var_dump(http_response_code());
 
 // レスポンスコードを設定します
 var_dump(http_response_code(201));
 
 // 新しいレスポンスコードを取得します
-var_dump(http_response_code());
+var_dump(http_response_code());*/
 
 ?>

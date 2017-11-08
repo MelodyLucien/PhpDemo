@@ -8,6 +8,9 @@ $mysql_conf = array(
     );
 
 $mysqli = @new mysqli($mysql_conf['host'], $mysql_conf['db_user'], $mysql_conf['db_pwd']) OR  die("could not connect to the database:\n" . $mysqli->connect_error);//诊断连接错误;
+
+$mysqli->query("set names 'utf8';");//编码转化
+
 ?>
 
 
