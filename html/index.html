@@ -29,6 +29,25 @@
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+<!--         <ul class="navbar-nav mr-auto">
+  <li class="nav-item active">
+    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+    <div class="dropdown-menu" aria-labelledby="dropdown01">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </li>
+</ul> -->
 
       </div>
     </nav>
@@ -36,46 +55,18 @@
     <main role="main" class="container">
 
       <div class="starter-template">
-        <?php 
-                /*
-                    $mysql_conf = array(
-                        'host'    => '127.0.0.1:3306', 
-                        'db'      => 'keys_info', 
-                        'db_user' => 'root', 
-                        'db_pwd'  => 'zhouhao2', 
-                        );
-                */
-                require_once('2.mysql/mysql_connect.php');
-                $select_db = $mysqli->select_db($mysql_conf['db']);
-                if (!$select_db) {
-                    die("could not connect to the db:\n" .$mysqli->error);
-                }
-                $sql = "select * from keys_info;";
-                $res = $mysqli->query($sql);
-                if ($res) {
-                    while ($row1 = $res->fetch_assoc()) {
-                       echo "<div class='row'>";
-                       echo "<div class='col-sm'>";
-                       echo $row1['keyname'];
-                       echo "</div>";
-                       echo "<div class='col-sm'>";
-                       echo $row1['keycode'];
-                       echo "</div>";
-                       echo "<div class='col-sm'>";
-                       echo "NOTE:";
-                       echo "</div>";
-                       echo "</div>";
-                    }
-                }else{
-                    die("sql error:\n" . $mysqli->error);
-                }
-                $res->free();
-                $mysqli->close();
-
-        ?>
-
+          <div class="row">
+            <div class="col-sm">
+              One of three columns
+            </div>
+            <div class="col-sm">
+              One of three columns
+            </div>
+            <div class="col-sm">
+              One of three columns
+            </div>
+          </div>
       </div>
-
 
     </main><!-- /.container -->
 
@@ -90,4 +81,3 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   </body>
 </html>
-
